@@ -10,6 +10,8 @@
 
 @interface RDDataManager : NSObject
 
+@property (strong, nonatomic) id currentPost;
+
 + (instancetype)sharedInstance;
 - (id)nextPost;
 - (BOOL)upvote;

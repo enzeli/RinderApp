@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "RDMockDataManager.h"
 
 @interface ViewController ()
 
@@ -17,6 +18,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    NSLog(@"View did load");
+    RDMockDataManager * mng = [RDMockDataManager sharedInstance];
+    NSLog(@"Current post:%@",mng.currentPost);
+    NSLog(@"Current post:%@",[mng nextPost]);
+    NSLog(@"Current post:%@",[mng nextPost]);
+    
 }
 
 - (void)didReceiveMemoryWarning {

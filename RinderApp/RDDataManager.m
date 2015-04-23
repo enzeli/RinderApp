@@ -10,8 +10,6 @@
 
 @interface RDDataManager()
 
-@property (strong, nonatomic) id currentPost;
-
 @end
 
 @implementation RDDataManager
