@@ -1,0 +1,447 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C311CA561AE7F92B00FF8EFE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C311CA551AE7F92B00FF8EFE /* main.m */; };
+		C311CA591AE7F92B00FF8EFE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C311CA581AE7F92B00FF8EFE /* AppDelegate.m */; };
+		C311CA5C1AE7F92B00FF8EFE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C311CA5B1AE7F92B00FF8EFE /* ViewController.m */; };
+		C311CA5F1AE7F92B00FF8EFE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C311CA5D1AE7F92B00FF8EFE /* Main.storyboard */; };
+		C311CA611AE7F92B00FF8EFE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C311CA601AE7F92B00FF8EFE /* Images.xcassets */; };
+		C311CA641AE7F92B00FF8EFE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C311CA621AE7F92B00FF8EFE /* LaunchScreen.xib */; };
+		C311CA701AE7F92B00FF8EFE /* RinderAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C311CA6F1AE7F92B00FF8EFE /* RinderAppTests.m */; };
+		C311CA7B1AE7FC1C00FF8EFE /* RDDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C311CA7A1AE7FC1C00FF8EFE /* RDDataManager.m */; };
+		C311CA7D1AE88C3200FF8EFE /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = C311CA7C1AE88C3200FF8EFE /* data.json */; };
+		C311CA801AE8902E00FF8EFE /* RDMockDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C311CA7F1AE8902E00FF8EFE /* RDMockDataManager.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C311CA6A1AE7F92B00FF8EFE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C311CA481AE7F92B00FF8EFE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C311CA4F1AE7F92B00FF8EFE;
+			remoteInfo = RinderApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C311CA501AE7F92B00FF8EFE /* RinderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RinderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C311CA541AE7F92B00FF8EFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C311CA551AE7F92B00FF8EFE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C311CA571AE7F92B00FF8EFE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C311CA581AE7F92B00FF8EFE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C311CA5A1AE7F92B00FF8EFE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		C311CA5B1AE7F92B00FF8EFE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		C311CA5E1AE7F92B00FF8EFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C311CA601AE7F92B00FF8EFE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		C311CA631AE7F92B00FF8EFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		C311CA691AE7F92B00FF8EFE /* RinderAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RinderAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C311CA6E1AE7F92B00FF8EFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C311CA6F1AE7F92B00FF8EFE /* RinderAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RinderAppTests.m; sourceTree = "<group>"; };
+		C311CA791AE7FC1C00FF8EFE /* RDDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDDataManager.h; sourceTree = "<group>"; };
+		C311CA7A1AE7FC1C00FF8EFE /* RDDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDDataManager.m; sourceTree = "<group>"; };
+		C311CA7C1AE88C3200FF8EFE /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		C311CA7E1AE8902E00FF8EFE /* RDMockDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDMockDataManager.h; sourceTree = "<group>"; };
+		C311CA7F1AE8902E00FF8EFE /* RDMockDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDMockDataManager.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C311CA4D1AE7F92B00FF8EFE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C311CA661AE7F92B00FF8EFE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C311CA471AE7F92A00FF8EFE = {
+			isa = PBXGroup;
+			children = (
+				C311CA521AE7F92B00FF8EFE /* RinderApp */,
+				C311CA6C1AE7F92B00FF8EFE /* RinderAppTests */,
+				C311CA511AE7F92B00FF8EFE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C311CA511AE7F92B00FF8EFE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C311CA501AE7F92B00FF8EFE /* RinderApp.app */,
+				C311CA691AE7F92B00FF8EFE /* RinderAppTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C311CA521AE7F92B00FF8EFE /* RinderApp */ = {
+			isa = PBXGroup;
+			children = (
+				C311CA571AE7F92B00FF8EFE /* AppDelegate.h */,
+				C311CA581AE7F92B00FF8EFE /* AppDelegate.m */,
+				C311CA5A1AE7F92B00FF8EFE /* ViewController.h */,
+				C311CA5B1AE7F92B00FF8EFE /* ViewController.m */,
+				C311CA791AE7FC1C00FF8EFE /* RDDataManager.h */,
+				C311CA7A1AE7FC1C00FF8EFE /* RDDataManager.m */,
+				C311CA7E1AE8902E00FF8EFE /* RDMockDataManager.h */,
+				C311CA7F1AE8902E00FF8EFE /* RDMockDataManager.m */,
+				C311CA5D1AE7F92B00FF8EFE /* Main.storyboard */,
+				C311CA601AE7F92B00FF8EFE /* Images.xcassets */,
+				C311CA621AE7F92B00FF8EFE /* LaunchScreen.xib */,
+				C311CA7C1AE88C3200FF8EFE /* data.json */,
+				C311CA531AE7F92B00FF8EFE /* Supporting Files */,
+			);
+			path = RinderApp;
+			sourceTree = "<group>";
+		};
+		C311CA531AE7F92B00FF8EFE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C311CA541AE7F92B00FF8EFE /* Info.plist */,
+				C311CA551AE7F92B00FF8EFE /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C311CA6C1AE7F92B00FF8EFE /* RinderAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				C311CA6F1AE7F92B00FF8EFE /* RinderAppTests.m */,
+				C311CA6D1AE7F92B00FF8EFE /* Supporting Files */,
+			);
+			path = RinderAppTests;
+			sourceTree = "<group>";
+		};
+		C311CA6D1AE7F92B00FF8EFE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C311CA6E1AE7F92B00FF8EFE /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C311CA4F1AE7F92B00FF8EFE /* RinderApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C311CA731AE7F92B00FF8EFE /* Build configuration list for PBXNativeTarget "RinderApp" */;
+			buildPhases = (
+				C311CA4C1AE7F92B00FF8EFE /* Sources */,
+				C311CA4D1AE7F92B00FF8EFE /* Frameworks */,
+				C311CA4E1AE7F92B00FF8EFE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RinderApp;
+			productName = RinderApp;
+			productReference = C311CA501AE7F92B00FF8EFE /* RinderApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C311CA681AE7F92B00FF8EFE /* RinderAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C311CA761AE7F92B00FF8EFE /* Build configuration list for PBXNativeTarget "RinderAppTests" */;
+			buildPhases = (
+				C311CA651AE7F92B00FF8EFE /* Sources */,
+				C311CA661AE7F92B00FF8EFE /* Frameworks */,
+				C311CA671AE7F92B00FF8EFE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C311CA6B1AE7F92B00FF8EFE /* PBXTargetDependency */,
+			);
+			name = RinderAppTests;
+			productName = RinderAppTests;
+			productReference = C311CA691AE7F92B00FF8EFE /* RinderAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C311CA481AE7F92B00FF8EFE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = RD;
+				TargetAttributes = {
+					C311CA4F1AE7F92B00FF8EFE = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
+					C311CA681AE7F92B00FF8EFE = {
+						CreatedOnToolsVersion = 6.3.1;
+						TestTargetID = C311CA4F1AE7F92B00FF8EFE;
+					};
+				};
+			};
+			buildConfigurationList = C311CA4B1AE7F92B00FF8EFE /* Build configuration list for PBXProject "RinderApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C311CA471AE7F92A00FF8EFE;
+			productRefGroup = C311CA511AE7F92B00FF8EFE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C311CA4F1AE7F92B00FF8EFE /* RinderApp */,
+				C311CA681AE7F92B00FF8EFE /* RinderAppTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C311CA4E1AE7F92B00FF8EFE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C311CA5F1AE7F92B00FF8EFE /* Main.storyboard in Resources */,
+				C311CA641AE7F92B00FF8EFE /* LaunchScreen.xib in Resources */,
+				C311CA611AE7F92B00FF8EFE /* Images.xcassets in Resources */,
+				C311CA7D1AE88C3200FF8EFE /* data.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C311CA671AE7F92B00FF8EFE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C311CA4C1AE7F92B00FF8EFE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C311CA801AE8902E00FF8EFE /* RDMockDataManager.m in Sources */,
+				C311CA7B1AE7FC1C00FF8EFE /* RDDataManager.m in Sources */,
+				C311CA5C1AE7F92B00FF8EFE /* ViewController.m in Sources */,
+				C311CA591AE7F92B00FF8EFE /* AppDelegate.m in Sources */,
+				C311CA561AE7F92B00FF8EFE /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C311CA651AE7F92B00FF8EFE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C311CA701AE7F92B00FF8EFE /* RinderAppTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C311CA6B1AE7F92B00FF8EFE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C311CA4F1AE7F92B00FF8EFE /* RinderApp */;
+			targetProxy = C311CA6A1AE7F92B00FF8EFE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C311CA5D1AE7F92B00FF8EFE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C311CA5E1AE7F92B00FF8EFE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C311CA621AE7F92B00FF8EFE /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C311CA631AE7F92B00FF8EFE /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C311CA711AE7F92B00FF8EFE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C311CA721AE7F92B00FF8EFE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C311CA741AE7F92B00FF8EFE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = RinderApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C311CA751AE7F92B00FF8EFE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = RinderApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		C311CA771AE7F92B00FF8EFE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = RinderAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RinderApp.app/RinderApp";
+			};
+			name = Debug;
+		};
+		C311CA781AE7F92B00FF8EFE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = RinderAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RinderApp.app/RinderApp";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C311CA4B1AE7F92B00FF8EFE /* Build configuration list for PBXProject "RinderApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C311CA711AE7F92B00FF8EFE /* Debug */,
+				C311CA721AE7F92B00FF8EFE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C311CA731AE7F92B00FF8EFE /* Build configuration list for PBXNativeTarget "RinderApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C311CA741AE7F92B00FF8EFE /* Debug */,
+				C311CA751AE7F92B00FF8EFE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C311CA761AE7F92B00FF8EFE /* Build configuration list for PBXNativeTarget "RinderAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C311CA771AE7F92B00FF8EFE /* Debug */,
+				C311CA781AE7F92B00FF8EFE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C311CA481AE7F92B00FF8EFE /* Project object */;
+}

@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Funny cow",
+    "url": "http://www.planet-wissen.de/alltag_gesundheit/landwirtschaft/rinderzucht/img/portraet_rinder_nase_g.jpg",
+    "id": "cow1",
+    "score": 1111,
+    "comments": ""
+  },
+  {
+    "title": "Lovely cow",
+    "url": "http://biohof-hausberg.de/sites/default/files/images/a_rinder2.jpg",
+    "id": "cow2",
+    "score": 2222,
+    "comments": ""
+  },
+  {
+    "title": "Ugly cow",
+    "url": "http://www.dorstenerzeitung.de/storage/pic/mdhl/fotostrecken/lokales/werne/lokales/2012/12-2012/highland_rinder_im_schnee/3564150_1_1213WE-RIND_19.jpg?version=1387321881",
+    "id": "cow3",
+    "score": 3333,
+    "comments": ""
+  }
+]
