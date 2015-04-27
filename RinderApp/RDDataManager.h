@@ -7,13 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "RedditPost.h"
 
 @interface RDDataManager : NSObject
 
-@property (strong, nonatomic) id currentPost;
+@property (strong, nonatomic) RedditPost *currentPost;
 
 + (instancetype)sharedInstance;
-- (id)nextPost;
+- (RedditPost *)nextPost;
 - (BOOL)upvote;
 - (BOOL)downvote;
 

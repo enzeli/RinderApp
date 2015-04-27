@@ -8,16 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		726D8FA7FDDD9161F373D150 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 528A5A5273DC2C8AE9ED7A03 /* libPods.a */; };
+		C30D679D1AE9990B00A6D74E /* RDChoosePostView.m in Sources */ = {isa = PBXBuildFile; fileRef = C30D679C1AE9990B00A6D74E /* RDChoosePostView.m */; };
+		C30D67A01AE9992C00A6D74E /* RDChoosePostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C30D679F1AE9992C00A6D74E /* RDChoosePostViewController.m */; };
 		C311CA561AE7F92B00FF8EFE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C311CA551AE7F92B00FF8EFE /* main.m */; };
 		C311CA591AE7F92B00FF8EFE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C311CA581AE7F92B00FF8EFE /* AppDelegate.m */; };
-		C311CA5C1AE7F92B00FF8EFE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C311CA5B1AE7F92B00FF8EFE /* ViewController.m */; };
-		C311CA5F1AE7F92B00FF8EFE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C311CA5D1AE7F92B00FF8EFE /* Main.storyboard */; };
 		C311CA611AE7F92B00FF8EFE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C311CA601AE7F92B00FF8EFE /* Images.xcassets */; };
-		C311CA641AE7F92B00FF8EFE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C311CA621AE7F92B00FF8EFE /* LaunchScreen.xib */; };
 		C311CA701AE7F92B00FF8EFE /* RinderAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C311CA6F1AE7F92B00FF8EFE /* RinderAppTests.m */; };
 		C311CA7B1AE7FC1C00FF8EFE /* RDDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C311CA7A1AE7FC1C00FF8EFE /* RDDataManager.m */; };
 		C311CA7D1AE88C3200FF8EFE /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = C311CA7C1AE88C3200FF8EFE /* data.json */; };
 		C311CA801AE8902E00FF8EFE /* RDMockDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C311CA7F1AE8902E00FF8EFE /* RDMockDataManager.m */; };
+		C3B3D7801AEE93DB0064E0C4 /* rinder.png in Resources */ = {isa = PBXBuildFile; fileRef = C3B3D77F1AEE93DB0064E0C4 /* rinder.png */; };
+		C3F82B291AED3560001CD6D0 /* ImageLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F82B281AED3560001CD6D0 /* ImageLabelView.m */; };
+		C3FC868A1AEABA0500DB2C6C /* RedditPost.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FC86891AEABA0500DB2C6C /* RedditPost.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,16 +35,16 @@
 /* Begin PBXFileReference section */
 		528A5A5273DC2C8AE9ED7A03 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		53B77462BA1FF35AEF011569 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		C30D679B1AE9990B00A6D74E /* RDChoosePostView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDChoosePostView.h; sourceTree = "<group>"; };
+		C30D679C1AE9990B00A6D74E /* RDChoosePostView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDChoosePostView.m; sourceTree = "<group>"; };
+		C30D679E1AE9992C00A6D74E /* RDChoosePostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDChoosePostViewController.h; sourceTree = "<group>"; };
+		C30D679F1AE9992C00A6D74E /* RDChoosePostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDChoosePostViewController.m; sourceTree = "<group>"; };
 		C311CA501AE7F92B00FF8EFE /* RinderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RinderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C311CA541AE7F92B00FF8EFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C311CA551AE7F92B00FF8EFE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C311CA571AE7F92B00FF8EFE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C311CA581AE7F92B00FF8EFE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C311CA5A1AE7F92B00FF8EFE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		C311CA5B1AE7F92B00FF8EFE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		C311CA5E1AE7F92B00FF8EFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C311CA601AE7F92B00FF8EFE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		C311CA631AE7F92B00FF8EFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		C311CA691AE7F92B00FF8EFE /* RinderAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RinderAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C311CA6E1AE7F92B00FF8EFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C311CA6F1AE7F92B00FF8EFE /* RinderAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RinderAppTests.m; sourceTree = "<group>"; };
@@ -51,6 +53,11 @@
 		C311CA7C1AE88C3200FF8EFE /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		C311CA7E1AE8902E00FF8EFE /* RDMockDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDMockDataManager.h; sourceTree = "<group>"; };
 		C311CA7F1AE8902E00FF8EFE /* RDMockDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDMockDataManager.m; sourceTree = "<group>"; };
+		C3B3D77F1AEE93DB0064E0C4 /* rinder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rinder.png; sourceTree = "<group>"; };
+		C3F82B271AED3560001CD6D0 /* ImageLabelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageLabelView.h; sourceTree = "<group>"; };
+		C3F82B281AED3560001CD6D0 /* ImageLabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageLabelView.m; sourceTree = "<group>"; };
+		C3FC86881AEABA0500DB2C6C /* RedditPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedditPost.h; sourceTree = "<group>"; };
+		C3FC86891AEABA0500DB2C6C /* RedditPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedditPost.m; sourceTree = "<group>"; };
 		CF0AA442B947FEC200A32AAA /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,6 +97,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C30D679A1AE97A0400A6D74E /* DataManagers */ = {
+			isa = PBXGroup;
+			children = (
+				C311CA791AE7FC1C00FF8EFE /* RDDataManager.h */,
+				C311CA7A1AE7FC1C00FF8EFE /* RDDataManager.m */,
+				C311CA7E1AE8902E00FF8EFE /* RDMockDataManager.h */,
+				C311CA7F1AE8902E00FF8EFE /* RDMockDataManager.m */,
+			);
+			name = DataManagers;
+			sourceTree = "<group>";
+		};
 		C311CA471AE7F92A00FF8EFE = {
 			isa = PBXGroup;
 			children = (
@@ -115,16 +133,18 @@
 			children = (
 				C311CA571AE7F92B00FF8EFE /* AppDelegate.h */,
 				C311CA581AE7F92B00FF8EFE /* AppDelegate.m */,
-				C311CA5A1AE7F92B00FF8EFE /* ViewController.h */,
-				C311CA5B1AE7F92B00FF8EFE /* ViewController.m */,
-				C311CA791AE7FC1C00FF8EFE /* RDDataManager.h */,
-				C311CA7A1AE7FC1C00FF8EFE /* RDDataManager.m */,
-				C311CA7E1AE8902E00FF8EFE /* RDMockDataManager.h */,
-				C311CA7F1AE8902E00FF8EFE /* RDMockDataManager.m */,
-				C311CA5D1AE7F92B00FF8EFE /* Main.storyboard */,
+				C3FC86881AEABA0500DB2C6C /* RedditPost.h */,
+				C3FC86891AEABA0500DB2C6C /* RedditPost.m */,
+				C3F82B271AED3560001CD6D0 /* ImageLabelView.h */,
+				C3F82B281AED3560001CD6D0 /* ImageLabelView.m */,
+				C30D679B1AE9990B00A6D74E /* RDChoosePostView.h */,
+				C30D679C1AE9990B00A6D74E /* RDChoosePostView.m */,
+				C30D679E1AE9992C00A6D74E /* RDChoosePostViewController.h */,
+				C30D679F1AE9992C00A6D74E /* RDChoosePostViewController.m */,
+				C30D679A1AE97A0400A6D74E /* DataManagers */,
 				C311CA601AE7F92B00FF8EFE /* Images.xcassets */,
-				C311CA621AE7F92B00FF8EFE /* LaunchScreen.xib */,
 				C311CA7C1AE88C3200FF8EFE /* data.json */,
+				C3B3D77F1AEE93DB0064E0C4 /* rinder.png */,
 				C311CA531AE7F92B00FF8EFE /* Supporting Files */,
 			);
 			path = RinderApp;
@@ -238,9 +258,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C311CA5F1AE7F92B00FF8EFE /* Main.storyboard in Resources */,
-				C311CA641AE7F92B00FF8EFE /* LaunchScreen.xib in Resources */,
 				C311CA611AE7F92B00FF8EFE /* Images.xcassets in Resources */,
+				C3B3D7801AEE93DB0064E0C4 /* rinder.png in Resources */,
 				C311CA7D1AE88C3200FF8EFE /* data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,8 +312,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C311CA801AE8902E00FF8EFE /* RDMockDataManager.m in Sources */,
+				C3F82B291AED3560001CD6D0 /* ImageLabelView.m in Sources */,
+				C3FC868A1AEABA0500DB2C6C /* RedditPost.m in Sources */,
+				C30D679D1AE9990B00A6D74E /* RDChoosePostView.m in Sources */,
 				C311CA7B1AE7FC1C00FF8EFE /* RDDataManager.m in Sources */,
-				C311CA5C1AE7F92B00FF8EFE /* ViewController.m in Sources */,
+				C30D67A01AE9992C00A6D74E /* RDChoosePostViewController.m in Sources */,
 				C311CA591AE7F92B00FF8EFE /* AppDelegate.m in Sources */,
 				C311CA561AE7F92B00FF8EFE /* main.m in Sources */,
 			);
@@ -317,25 +339,6 @@
 			targetProxy = C311CA6A1AE7F92B00FF8EFE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		C311CA5D1AE7F92B00FF8EFE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C311CA5E1AE7F92B00FF8EFE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		C311CA621AE7F92B00FF8EFE /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C311CA631AE7F92B00FF8EFE /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		C311CA711AE7F92B00FF8EFE /* Debug */ = {

@@ -23,9 +23,9 @@
     return sharedInstance;
 }
 
-- (id)nextPost
+- (RedditPost *)nextPost
 {
-    return nil;
+    return Nil;
 }
 
 - (BOOL)upvote

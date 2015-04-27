@@ -7,6 +7,7 @@
 //
 
 #import "RDMockDataManager.h"
+#import "RedditPost.h"
 
 @interface RDMockDataManager()
 
@@ -31,7 +32,8 @@
 - (void)setIdx:(int)idx
 {
     _idx = idx;
-    self.currentPost = [self.mockdata objectAtIndex:idx];
+    id JSONPost = [self.mockdata objectAtIndex:idx];
+    self.currentPost = [[RedditPost alloc] initWithJSON:JSONPost];
 }
 
 
