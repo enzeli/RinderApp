@@ -8,7 +8,6 @@
 
 #import "RDChoosePostView.h"
 
-#import "ImageLabelView.h"
 #import "RedditPost.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 

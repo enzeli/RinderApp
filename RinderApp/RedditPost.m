@@ -18,21 +18,7 @@
         self.score = [JSONObject objectForKey:@"score"];
         self.title = [JSONObject objectForKey:@"title"];
         self.url = [JSONObject objectForKey:@"url"];
-    }
-    return  self;
-}
-
-- (instancetype)initWithId:(NSString *)postid
-                     score:(NSString *)score
-                     title:(NSString *)title
-                       url:(NSString *)url
-{
-    if (self = [super init])
-    {
-        self.postid = postid;
-        self.score = score;
-        self.title = title;
-        self.url = url;
+        self.permalink = [JSONObject objectForKey:@"permalink"];
     }
     return  self;
 }

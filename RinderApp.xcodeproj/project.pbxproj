@@ -18,7 +18,6 @@
 		C311CA7D1AE88C3200FF8EFE /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = C311CA7C1AE88C3200FF8EFE /* data.json */; };
 		C311CA801AE8902E00FF8EFE /* RDMockDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C311CA7F1AE8902E00FF8EFE /* RDMockDataManager.m */; };
 		C3B3D7801AEE93DB0064E0C4 /* rinder.png in Resources */ = {isa = PBXBuildFile; fileRef = C3B3D77F1AEE93DB0064E0C4 /* rinder.png */; };
-		C3F82B291AED3560001CD6D0 /* ImageLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F82B281AED3560001CD6D0 /* ImageLabelView.m */; };
 		C3FC868A1AEABA0500DB2C6C /* RedditPost.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FC86891AEABA0500DB2C6C /* RedditPost.m */; };
 /* End PBXBuildFile section */
 
@@ -54,8 +53,6 @@
 		C311CA7E1AE8902E00FF8EFE /* RDMockDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDMockDataManager.h; sourceTree = "<group>"; };
 		C311CA7F1AE8902E00FF8EFE /* RDMockDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDMockDataManager.m; sourceTree = "<group>"; };
 		C3B3D77F1AEE93DB0064E0C4 /* rinder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rinder.png; sourceTree = "<group>"; };
-		C3F82B271AED3560001CD6D0 /* ImageLabelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageLabelView.h; sourceTree = "<group>"; };
-		C3F82B281AED3560001CD6D0 /* ImageLabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageLabelView.m; sourceTree = "<group>"; };
 		C3FC86881AEABA0500DB2C6C /* RedditPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedditPost.h; sourceTree = "<group>"; };
 		C3FC86891AEABA0500DB2C6C /* RedditPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedditPost.m; sourceTree = "<group>"; };
 		CF0AA442B947FEC200A32AAA /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -135,8 +132,6 @@
 				C311CA581AE7F92B00FF8EFE /* AppDelegate.m */,
 				C3FC86881AEABA0500DB2C6C /* RedditPost.h */,
 				C3FC86891AEABA0500DB2C6C /* RedditPost.m */,
-				C3F82B271AED3560001CD6D0 /* ImageLabelView.h */,
-				C3F82B281AED3560001CD6D0 /* ImageLabelView.m */,
 				C30D679B1AE9990B00A6D74E /* RDChoosePostView.h */,
 				C30D679C1AE9990B00A6D74E /* RDChoosePostView.m */,
 				C30D679E1AE9992C00A6D74E /* RDChoosePostViewController.h */,
@@ -227,6 +222,7 @@
 				TargetAttributes = {
 					C311CA4F1AE7F92B00FF8EFE = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = TMTUBE4K7Y;
 					};
 					C311CA681AE7F92B00FF8EFE = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -312,7 +308,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C311CA801AE8902E00FF8EFE /* RDMockDataManager.m in Sources */,
-				C3F82B291AED3560001CD6D0 /* ImageLabelView.m in Sources */,
 				C3FC868A1AEABA0500DB2C6C /* RedditPost.m in Sources */,
 				C30D679D1AE9990B00A6D74E /* RDChoosePostView.m in Sources */,
 				C311CA7B1AE7FC1C00FF8EFE /* RDDataManager.m in Sources */,
@@ -426,9 +421,12 @@
 			baseConfigurationReference = 53B77462BA1FF35AEF011569 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = RinderApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -437,9 +435,12 @@
 			baseConfigurationReference = CF0AA442B947FEC200A32AAA /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = RinderApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

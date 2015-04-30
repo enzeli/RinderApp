@@ -63,7 +63,7 @@
 
 -(id)nextPost
 {
-    self.idx = (_idx+1) % 3;
+    self.idx = (_idx+1) % [self.mockdata count];
     return self.currentPost;
 }
 

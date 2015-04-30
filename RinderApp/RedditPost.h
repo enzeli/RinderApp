@@ -15,11 +15,8 @@
 @property (assign, nonatomic) NSString *score;
 @property (strong, nonatomic) NSString *title;
 @property (strong, nonatomic) NSString *url;
+@property (strong, nonatomic) NSString *permalink;
 
 - (instancetype)initWithJSON:(id)JSONObject;
-- (instancetype)initWithId:(NSString *)postid
-                     score:(NSString *)score
-                     title:(NSString *)title
-                       url:(NSString *)url;
 
 @end
