@@ -12,7 +12,7 @@
 @interface RDMockDataManager()
 
 @property (assign, nonatomic) int idx;
-@property (strong, nonatomic) NSArray* mockdata;
+@property (strong, nonatomic) NSArray* data;
 
 @end
 
@@ -31,9 +31,17 @@
 
 - (void)setIdx:(int)idx
 {
+    if ([self.data count] == 0) {
+        return;
+    }
     _idx = idx;
-    id JSONPost = [self.mockdata objectAtIndex:idx];
-    self.currentPost = [[RedditPost alloc] initWithJSON:JSONPost];
+    
+    self.currentPost = [[RedditPost alloc] initWithJSON: [self.data objectAtIndex:idx]];
+    
+    int nextIdx = (_idx+1) % [self.data count];
+    
+    self.nextPost = [[RedditPost alloc] initWithJSON: [self.data objectAtIndex:nextIdx]];
+    
 }
 
 
@@ -57,26 +65,46 @@
 //    NSLog(@"%@", JSONObject);
     if ([JSONObject isKindOfClass:[NSArray class]])
     {
-        self.mockdata = (NSArray *) JSONObject;
+        self.data = (NSArray *) JSONObject;
     }
 }
 
--(id)nextPost
-{
-    self.idx = (_idx+1) % [self.mockdata count];
-    return self.currentPost;
-}
 
 - (BOOL)upvote
 {
+    NSLog(@"You upvoted %@.", self.currentPost.title);
+    [self userDidVote];
     return YES;
 }
 
 -(BOOL)downvote
 {
+    NSLog(@"You downvoted %@.", self.currentPost.title);
+    [self userDidVote];
     return YES;
 }
 
+- (void)userDidVote
+{
+    if (self.data.count == 0){
+        return;
+    }
+    
+    int nextIdx = self.idx+1 % self.data.count;
+    
+    _idx = nextIdx;
+    
+    if (self.nextPost){
+        self.currentPost = self.nextPost;
+    } else{
+        self.currentPost = [[RedditPost alloc] initWithJSON: [self.data objectAtIndex:nextIdx]];
+    }
+    
+    int nextNextIdx = (nextIdx+1) % [self.data count];
+    
+    self.nextPost = [[RedditPost alloc] initWithJSON: [self.data objectAtIndex:nextNextIdx]];
+    
+}
 
 
 @end

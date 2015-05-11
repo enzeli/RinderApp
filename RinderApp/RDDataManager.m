@@ -23,11 +23,6 @@
     return sharedInstance;
 }
 
-- (RedditPost *)nextPost
-{
-    return Nil;
-}
-
 - (BOOL)upvote
 {
     return YES;

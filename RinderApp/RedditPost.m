@@ -20,6 +20,7 @@
         self.url = [JSONObject objectForKey:@"url"];
         self.permalink = [JSONObject objectForKey:@"permalink"];
     }
+    
     return  self;
 }
 

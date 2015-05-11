@@ -7,15 +7,13 @@
 //
 
 #import "RDChoosePostViewController.h"
-#import "RDMockDataManager.h"
-
 
 static const CGFloat ChoosePersonButtonHorizontalPadding = 80.f;
 static const CGFloat ChoosePersonButtonVerticalPadding = 20.f;
 
 @interface RDChoosePostViewController ()
 
-@property (strong, nonatomic) RDMockDataManager* mng;
+@property (strong, nonatomic) RDLocalhostDataManager* mng;
 
 @end
 
@@ -25,22 +23,12 @@ static const CGFloat ChoosePersonButtonVerticalPadding = 20.f;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     NSLog(@"View did load");
-    _mng = [RDMockDataManager sharedInstance];
-//    NSLog(@"Current post:%@",[_mng.currentPost class]);
-//    NSLog(@"Current post:%@",[_mng nextPost]);
-//    NSLog(@"Current post:%@",[_mng nextPost]);
-//    NSLog(@"Current post:%@",[_mng nextPost]);
-    // Display the first ChoosePersonView in front. Users can swipe to indicate
-    // whether they like or dislike the person displayed.
-    
-    self.frontCardView =[self popPostViewWithFrame:[self backCardViewFrame]];
-    [self.view addSubview:self.frontCardView];
-    
-    // Display the second ChoosePersonView in back. This view controller uses
-    // the MDCSwipeToChooseDelegate protocol methods to update the front and
-    // back views after each user swipe.
-    self.backCardView = [self popPostViewWithFrame:[self backCardViewFrame]];
-    [self.view insertSubview:self.backCardView belowSubview:self.frontCardView];
+    _mng = [RDLocalhostDataManager sharedInstance];
+    _mng.delegate = self;
+
+    NSLog(@"Manager did load");
+
+    [self reloadCardViews];
     
     // Add buttons to programmatically swipe the view left or right.
     // See the `nopeFrontCardView` and `likeFrontCardView` methods.
@@ -48,7 +36,21 @@ static const CGFloat ChoosePersonButtonVerticalPadding = 20.f;
     [self constructLikedButton];
 }
 
-- (RDChoosePostView *)popPostViewWithFrame:(CGRect)frame {
+- (void)reloadCardViews
+{
+    self.frontCardView =[self popPostViewWithFrame:[self backCardViewFrame]
+                                              post:_mng.currentPost];
+    [self.view addSubview:self.frontCardView];
+    
+    // Display the second ChoosePersonView in back. This view controller uses
+    // the MDCSwipeToChooseDelegate protocol methods to update the front and
+    // back views after each user swipe.
+    self.backCardView = [self popPostViewWithFrame:[self backCardViewFrame]
+                                              post:_mng.nextPost];
+    [self.view insertSubview:self.backCardView belowSubview:self.frontCardView];
+}
+
+- (RDChoosePostView *)popPostViewWithFrame:(CGRect)frame post:(RedditPost*) post{
     
     // UIView+MDCSwipeToChoose and MDCSwipeToChooseView are heavily customizable.
     // Each take an "options" argument. Here, we specify the view controller as
@@ -68,11 +70,12 @@ static const CGFloat ChoosePersonButtonVerticalPadding = 20.f;
     // Create a personView with the top person in the people array, then pop
     // that person off the stack.
     RDChoosePostView *postView = [[RDChoosePostView alloc] initWithFrame:frame
-                                                                  post:[_mng nextPost]
+                                                                  post:post
                                                                  options:options];
-
+    
     return postView;
 }
+
 
 
 #pragma mark - MDCSwipeToChooseDelegate Protocol Methods
@@ -87,9 +90,9 @@ static const CGFloat ChoosePersonButtonVerticalPadding = 20.f;
     // MDCSwipeToChooseView shows "NOPE" on swipes to the left,
     // and "LIKED" on swipes to the right.
     if (direction == MDCSwipeDirectionLeft) {
-        NSLog(@"You noped %@.", _mng.currentPost.title);
+        [_mng downvote];
     } else {
-        NSLog(@"You liked %@.", _mng.currentPost.title);
+        [_mng upvote];
     }
     
     // MDCSwipeToChooseView removes the view from the view hierarchy
@@ -97,7 +100,9 @@ static const CGFloat ChoosePersonButtonVerticalPadding = 20.f;
     // MDCSwipeOptions class). Since the front card view is gone, we
     // move the back card to the front, and create a new back card.
     self.frontCardView = self.backCardView;
-    if ((self.backCardView = [self popPostViewWithFrame:[self backCardViewFrame]])) {
+    self.backCardView = [self popPostViewWithFrame:[self backCardViewFrame]
+                                              post:_mng.nextPost];
+    if ((self.backCardView)) {
         // Fade the back card into view.
         self.backCardView.alpha = 0.f;
         [self.view insertSubview:self.backCardView belowSubview:self.frontCardView];
@@ -106,7 +111,8 @@ static const CGFloat ChoosePersonButtonVerticalPadding = 20.f;
                             options:UIViewAnimationOptionCurveEaseInOut
                          animations:^{
                              self.backCardView.alpha = 1.f;
-                         } completion:nil];
+                         }
+                         completion:nil];
     }
 }
 
@@ -170,9 +176,7 @@ static const CGFloat ChoosePersonButtonVerticalPadding = 20.f;
 }
 
 
-
-
-#pragma mark Control Events
+#pragma mark - Control Events
 
 // Programmatically "nopes" the front card view.
 - (void)nopeFrontCardView {
@@ -184,5 +188,12 @@ static const CGFloat ChoosePersonButtonVerticalPadding = 20.f;
     [self.frontCardView mdc_swipe:MDCSwipeDirectionRight];
 }
 
+#pragma mark - Data Manager Delegate
+
+- (void)didFinishLoadingData:(RDLocalhostDataManager *)manager
+{
+    NSLog(@"didFinishLoadingData");
+    [self reloadCardViews];
+}
 
 @end

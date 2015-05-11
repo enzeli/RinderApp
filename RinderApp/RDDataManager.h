@@ -12,9 +12,10 @@
 @interface RDDataManager : NSObject
 
 @property (strong, nonatomic) RedditPost *currentPost;
+@property (strong, nonatomic) RedditPost *nextPost;
+
 
 + (instancetype)sharedInstance;
-- (RedditPost *)nextPost;
 - (BOOL)upvote;
 - (BOOL)downvote;
 

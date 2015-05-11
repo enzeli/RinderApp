@@ -16,6 +16,8 @@
 @interface RDChoosePostView()
 
 @property (nonatomic, strong) UIView *informationView;
+@property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) UITextView *titleView;
 
 @end
 
@@ -36,6 +38,7 @@
     self = [super initWithFrame:frame options:options];
     if (self) {
         _post = post;
+        self.imageView.backgroundColor =[UIColor greenColor];
         self.imageView.image = Nil;
         self.imageView.contentMode = UIViewContentModeScaleAspectFill;
         [self.imageView sd_setImageWithURL:[NSURL URLWithString:post.url]
@@ -46,9 +49,54 @@
         UIViewAutoresizingFlexibleBottomMargin;
         self.imageView.autoresizingMask = self.autoresizingMask;
         
-//        [self constructInformationView];
+        [self constructInformationView];
+
     }
     return self;
 }
+
+- (void)constructInformationView {
+    CGFloat bottomHeight = 60.f;
+    CGRect bottomFrame = CGRectMake(0,
+                                    CGRectGetHeight(self.bounds) - bottomHeight,
+                                    CGRectGetWidth(self.bounds),
+                                    bottomHeight);
+    _informationView = [[UIView alloc] initWithFrame:bottomFrame];
+    _informationView.backgroundColor = [UIColor darkGrayColor];
+    _informationView.clipsToBounds = YES;
+    _informationView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
+    _informationView.alpha = 0.5;
+    
+    [self addSubview:_informationView];
+
+//    [self constructTitleLabel];
+    [self constructTitleView];
+}
+
+- (void)constructTitleView {
+    CGFloat leftPadding = 12.f;
+    CGFloat topPadding = 12.f;
+    CGRect frame = CGRectMake(leftPadding,
+                              topPadding,
+                              CGRectGetWidth(_informationView.frame),
+                              CGRectGetHeight(_informationView.frame) - topPadding);
+    _titleView = [[UITextView alloc] initWithFrame:frame];
+    _titleView.textColor = [UIColor whiteColor];
+    _titleView.text = [NSString stringWithFormat:@"%@", _post.title];
+    [_informationView addSubview:_titleLabel];
+}
+
+//- (void)constructTitleLabel {
+//    CGFloat leftPadding = 12.f;
+//    CGFloat topPadding = 12.f;
+//    CGRect frame = CGRectMake(leftPadding,
+//                              topPadding,
+//                              CGRectGetWidth(_informationView.frame),
+//                              CGRectGetHeight(_informationView.frame) - topPadding);
+//    _titleLabel = [[UILabel alloc] initWithFrame:frame];
+//    _titleLabel.textColor = [UIColor whiteColor];
+//    _titleLabel.text = [NSString stringWithFormat:@"%@", _post.title];
+//    [_informationView addSubview:_titleLabel];
+//}
 
 @end

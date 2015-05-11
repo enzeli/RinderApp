@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <MDCSwipeToChoose/MDCSwipeToChoose.h>
 #import "RDChoosePostView.h"
+#import "RDLocalhostDataManager.h"
 
-@interface RDChoosePostViewController : UIViewController <MDCSwipeToChooseDelegate>
+@interface RDChoosePostViewController : UIViewController <MDCSwipeToChooseDelegate, RDDataMangerDelegate>
 
 @property (nonatomic, strong) RDChoosePostView *frontCardView;
 @property (nonatomic, strong) RDChoosePostView *backCardView;
