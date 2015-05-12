@@ -32,8 +32,8 @@ static const CGFloat ChoosePersonButtonVerticalPadding = 20.f;
     
     // Add buttons to programmatically swipe the view left or right.
     // See the `nopeFrontCardView` and `likeFrontCardView` methods.
-    [self constructNopeButton];
-    [self constructLikedButton];
+    [self constructDownvoteButton];
+    [self constructUpvoteButton];
 }
 
 - (void)reloadCardViews
@@ -138,9 +138,9 @@ static const CGFloat ChoosePersonButtonVerticalPadding = 20.f;
 }
 
 // Create and add the "nope" button.
-- (void)constructNopeButton {
+- (void)constructDownvoteButton {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    UIImage *image = [UIImage imageNamed:@"nope"];
+    UIImage *image = [UIImage imageNamed:@"downvote"];
     button.frame = CGRectMake(ChoosePersonButtonHorizontalPadding,
                               CGRectGetMaxY(self.backCardView.frame) + ChoosePersonButtonVerticalPadding,
                               image.size.width,
@@ -157,9 +157,9 @@ static const CGFloat ChoosePersonButtonVerticalPadding = 20.f;
 }
 
 // Create and add the "like" button.
-- (void)constructLikedButton {
+- (void)constructUpvoteButton {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    UIImage *image = [UIImage imageNamed:@"liked"];
+    UIImage *image = [UIImage imageNamed:@"upvote"];
     button.frame = CGRectMake(CGRectGetMaxX(self.view.frame) - image.size.width - ChoosePersonButtonHorizontalPadding,
                               CGRectGetMaxY(self.backCardView.frame) + ChoosePersonButtonVerticalPadding,
                               image.size.width,
