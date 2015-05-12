@@ -8,15 +8,15 @@
 
 #import "RDDataManager.h"
 
-@class RDLocalhostDataManager;
+@class RDHostDataManager;
 
 @protocol RDDataMangerDelegate <NSObject>
 
--(void)didFinishLoadingData:(RDLocalhostDataManager *)manager;
+-(void)didFinishLoadingData:(RDHostDataManager *)manager;
 
 @end
 
-@interface RDLocalhostDataManager : RDDataManager
+@interface RDHostDataManager : RDDataManager
 
 @property (nonatomic, weak) id <RDDataMangerDelegate> delegate;
 

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <MDCSwipeToChoose/MDCSwipeToChoose.h>
 #import "RDChoosePostView.h"
-#import "RDLocalhostDataManager.h"
+#import "RDHostDataManager.h"
 
 @interface RDChoosePostViewController : UIViewController <MDCSwipeToChooseDelegate, RDDataMangerDelegate>
 

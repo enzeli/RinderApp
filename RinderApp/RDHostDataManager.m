@@ -6,11 +6,12 @@
 //  Copyright (c) 2015 RD. All rights reserved.
 //
 
-#import "RDLocalhostDataManager.h"
+#import "RDHostDataManager.h"
 #import "AFNetworking.h"
 static NSString * const ENDPOINT =  @"http://localhost:8080/api/v1/links";
+//static NSString * const ENDPOINT =  @"http://rinderxxxx-dev.elasticbeanstalk.com/api/v1/links";
 
-@interface RDLocalhostDataManager()
+@interface RDHostDataManager()
 
 @property (assign, nonatomic) int idx;
 @property (strong, nonatomic) NSArray* data;
@@ -20,7 +21,7 @@ static NSString * const ENDPOINT =  @"http://localhost:8080/api/v1/links";
 @end
 
 
-@implementation RDLocalhostDataManager
+@implementation RDHostDataManager
 
 @synthesize idx=_idx;
 

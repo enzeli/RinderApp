@@ -95,7 +95,7 @@
                               CGRectGetHeight(_informationView.frame) - topPadding);
     _titleLabel = [[UILabel alloc] initWithFrame:frame];
     _titleLabel.textColor = [UIColor whiteColor];
-    _titleLabel.text = [NSString stringWithFormat:@"%@", _post.title];
+    _titleLabel.text = [NSString stringWithFormat:@"%@", _post.title ? _post.title : @"Rindering..."];
     [_informationView addSubview:_titleLabel];
 }
 

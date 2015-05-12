@@ -14,8 +14,10 @@ static const CGFloat ChoosePersonButtonVerticalPadding = 20.f;
 
 @interface RDChoosePostViewController ()
 
-@property (strong, nonatomic) RDLocalhostDataManager* mng;
+@property (strong, nonatomic) RDHostDataManager* mng;
 @property (strong, nonatomic) MBProgressHUD* hud;
+@property (strong, nonatomic) UITapGestureRecognizer * recognizer;
+@property (strong, nonatomic) UIImageView * imageView;
 
 @end
 
@@ -26,11 +28,13 @@ static const CGFloat ChoosePersonButtonVerticalPadding = 20.f;
 
     // Do any additional setup after loading the view.
     NSLog(@"View did load");
-    _mng = [RDLocalhostDataManager sharedInstance];
+    _mng = [RDHostDataManager sharedInstance];
     _mng.delegate = self;
 
     NSLog(@"Manager did load");
-
+    
+    self.recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageTapped:)];
+    
     [self reloadCardViews];
     
     [self constructDownvoteButton];
@@ -47,9 +51,8 @@ static const CGFloat ChoosePersonButtonVerticalPadding = 20.f;
                                               post:_mng.currentPost];
     [self.view addSubview:self.frontCardView];
     
-    // Display the second ChoosePersonView in back. This view controller uses
-    // the MDCSwipeToChooseDelegate protocol methods to update the front and
-    // back views after each user swipe.
+    [self.frontCardView addGestureRecognizer:self.recognizer];
+    
     self.backCardView = [self popPostViewWithFrame:[self backCardViewFrame]
                                               post:_mng.nextPost];
     [self.view insertSubview:self.backCardView belowSubview:self.frontCardView];
@@ -105,6 +108,7 @@ static const CGFloat ChoosePersonButtonVerticalPadding = 20.f;
     // MDCSwipeOptions class). Since the front card view is gone, we
     // move the back card to the front, and create a new back card.
     self.frontCardView = self.backCardView;
+    [self.frontCardView addGestureRecognizer:self.recognizer];
     self.backCardView = [self popPostViewWithFrame:[self backCardViewFrame]
                                               post:_mng.nextPost];
     if ((self.backCardView)) {
@@ -156,7 +160,7 @@ static const CGFloat ChoosePersonButtonVerticalPadding = 20.f;
                                           blue:37.f/255.f
                                          alpha:1.f]];
     [button addTarget:self
-               action:@selector(nopeFrontCardView)
+               action:@selector(downvoteFrontCardView)
      forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
 }
@@ -175,27 +179,60 @@ static const CGFloat ChoosePersonButtonVerticalPadding = 20.f;
                                           blue:106.f/255.f
                                          alpha:1.f]];
     [button addTarget:self
-               action:@selector(likeFrontCardView)
+               action:@selector(upvoteFrontCardView)
      forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
 }
 
+#pragma mark - Comments view
+
+
+- (void)imageTapped:(UITapGestureRecognizer *)recognizer
+{
+    self.imageView = [[UIImageView alloc] initWithFrame:self.view.frame];
+    self.imageView.backgroundColor = [UIColor blackColor];
+    [self.imageView setImage:self.frontCardView.imageView.image];
+    self.imageView.contentMode = UIViewContentModeScaleAspectFit;
+    self.imageView.alpha = 0.0;
+    [self.view addSubview:self.imageView];
+    [UIView animateWithDuration:0.3
+                     animations:^{
+                         self.imageView.alpha = 1.0;
+                     }];
+    self.imageView.userInteractionEnabled = YES;
+    UITapGestureRecognizer *dismissTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissTapped:)];
+    [self.imageView addGestureRecognizer:dismissTap];
+}
+                                          
+- (void)dismissTapped:(UITapGestureRecognizer *)recognizer
+{
+    [UIView animateWithDuration:0.3
+                     animations:^{
+                         self.imageView.alpha = 0.0;
+                     }
+                     completion:^(BOOL finished){
+                         if (finished) {
+                             [self.imageView removeFromSuperview];
+                             self.imageView = nil;
+                         }
+                     }];
+}
 
 #pragma mark - Control Events
 
 // Programmatically "nopes" the front card view.
-- (void)nopeFrontCardView {
+- (void)downvoteFrontCardView {
     [self.frontCardView mdc_swipe:MDCSwipeDirectionLeft];
 }
 
 // Programmatically "likes" the front card view.
-- (void)likeFrontCardView {
+- (void)upvoteFrontCardView {
     [self.frontCardView mdc_swipe:MDCSwipeDirectionRight];
 }
 
 #pragma mark - Data Manager Delegate
 
-- (void)didFinishLoadingData:(RDLocalhostDataManager *)manager
+- (void)didFinishLoadingData:(RDHostDataManager *)manager
 {
     NSLog(@"didFinishLoadingData");
     [self reloadCardViews];
