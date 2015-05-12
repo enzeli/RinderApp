@@ -7,6 +7,7 @@
 //
 
 #import "RDChoosePostViewController.h"
+#import "MBProgressHUD.h"
 
 static const CGFloat ChoosePersonButtonHorizontalPadding = 80.f;
 static const CGFloat ChoosePersonButtonVerticalPadding = 20.f;
@@ -14,6 +15,7 @@ static const CGFloat ChoosePersonButtonVerticalPadding = 20.f;
 @interface RDChoosePostViewController ()
 
 @property (strong, nonatomic) RDLocalhostDataManager* mng;
+@property (strong, nonatomic) MBProgressHUD* hud;
 
 @end
 
@@ -21,6 +23,7 @@ static const CGFloat ChoosePersonButtonVerticalPadding = 20.f;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     // Do any additional setup after loading the view.
     NSLog(@"View did load");
     _mng = [RDLocalhostDataManager sharedInstance];
@@ -30,10 +33,12 @@ static const CGFloat ChoosePersonButtonVerticalPadding = 20.f;
 
     [self reloadCardViews];
     
-    // Add buttons to programmatically swipe the view left or right.
-    // See the `nopeFrontCardView` and `likeFrontCardView` methods.
     [self constructDownvoteButton];
     [self constructUpvoteButton];
+    
+    self.hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    self.hud.mode = MBProgressHUDModeIndeterminate;
+    self.hud.labelText = @"Loading";
 }
 
 - (void)reloadCardViews
@@ -194,6 +199,7 @@ static const CGFloat ChoosePersonButtonVerticalPadding = 20.f;
 {
     NSLog(@"didFinishLoadingData");
     [self reloadCardViews];
+    [self.hud hide:YES];
 }
 
 @end
