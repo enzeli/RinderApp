@@ -8,6 +8,7 @@
 
 #import "RDChoosePostViewController.h"
 #import "MBProgressHUD.h"
+#import "SVModalWebViewController.h"
 
 static const CGFloat ChoosePersonButtonHorizontalPadding = 80.f;
 static const CGFloat ChoosePersonButtonVerticalPadding = 20.f;
@@ -16,7 +17,8 @@ static const CGFloat ChoosePersonButtonVerticalPadding = 20.f;
 
 @property (strong, nonatomic) RDHostDataManager* mng;
 @property (strong, nonatomic) MBProgressHUD* hud;
-@property (strong, nonatomic) UITapGestureRecognizer * recognizer;
+@property (strong, nonatomic) UITapGestureRecognizer * tapRecognizer;
+@property (strong, nonatomic) UILongPressGestureRecognizer * pressRecognizer;
 @property (strong, nonatomic) UIImageView * imageView;
 
 @end
@@ -27,13 +29,12 @@ static const CGFloat ChoosePersonButtonVerticalPadding = 20.f;
     [super viewDidLoad];
 
     // Do any additional setup after loading the view.
-    NSLog(@"View did load");
+
     _mng = [RDHostDataManager sharedInstance];
     _mng.delegate = self;
-
-    NSLog(@"Manager did load");
     
-    self.recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageTapped:)];
+    self.tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageTapped:)];
+    self.pressRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(imageLongPressed:)];
     
     [self reloadCardViews];
     
@@ -51,7 +52,8 @@ static const CGFloat ChoosePersonButtonVerticalPadding = 20.f;
                                               post:_mng.currentPost];
     [self.view addSubview:self.frontCardView];
     
-    [self.frontCardView addGestureRecognizer:self.recognizer];
+    [self.frontCardView addGestureRecognizer:self.tapRecognizer];
+    [self.frontCardView addGestureRecognizer:self.pressRecognizer];
     
     self.backCardView = [self popPostViewWithFrame:[self backCardViewFrame]
                                               post:_mng.nextPost];
@@ -90,7 +92,7 @@ static const CGFloat ChoosePersonButtonVerticalPadding = 20.f;
 
 // This is called when a user didn't fully swipe left or right.
 - (void)viewDidCancelSwipe:(UIView *)view {
-    NSLog(@"You couldn't decide on %@.", _mng.currentPost.title);
+//    NSLog(@"You couldn't decide on %@.", _mng.currentPost.title);
 }
 
 // This is called then a user swipes the view fully left or right.
@@ -108,7 +110,9 @@ static const CGFloat ChoosePersonButtonVerticalPadding = 20.f;
     // MDCSwipeOptions class). Since the front card view is gone, we
     // move the back card to the front, and create a new back card.
     self.frontCardView = self.backCardView;
-    [self.frontCardView addGestureRecognizer:self.recognizer];
+    [self.frontCardView addGestureRecognizer:self.tapRecognizer];
+    [self.frontCardView addGestureRecognizer:self.pressRecognizer];
+
     self.backCardView = [self popPostViewWithFrame:[self backCardViewFrame]
                                               post:_mng.nextPost];
     if ((self.backCardView)) {
@@ -184,8 +188,7 @@ static const CGFloat ChoosePersonButtonVerticalPadding = 20.f;
     [self.view addSubview:button];
 }
 
-#pragma mark - Comments view
-
+#pragma mark - Gestures
 
 - (void)imageTapped:(UITapGestureRecognizer *)recognizer
 {
@@ -218,6 +221,25 @@ static const CGFloat ChoosePersonButtonVerticalPadding = 20.f;
                      }];
 }
 
+- (void)imageLongPressed:(UILongPressGestureRecognizer *)recoginizer
+{
+    
+    SVModalWebViewController *webViewController = [[SVModalWebViewController alloc] initWithAddress:_mng.currentPost.permalink];
+    [self presentViewController:webViewController animated:YES completion:NULL];
+    
+    return;
+}
+
+
+#pragma mark - Orientation Changed
+
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+{
+    if (self.imageView) {
+        self.imageView.frame = self.view.frame;
+    }
+}
+
 #pragma mark - Control Events
 
 // Programmatically "nopes" the front card view.
@@ -234,7 +256,6 @@ static const CGFloat ChoosePersonButtonVerticalPadding = 20.f;
 
 - (void)didFinishLoadingData:(RDHostDataManager *)manager
 {
-    NSLog(@"didFinishLoadingData");
     [self reloadCardViews];
     [self.hud hide:YES];
 }
