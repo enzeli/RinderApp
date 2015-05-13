@@ -242,12 +242,10 @@ static const CGFloat ChoosePersonButtonVerticalPadding = 20.f;
 
 #pragma mark - Control Events
 
-// Programmatically "nopes" the front card view.
 - (void)downvoteFrontCardView {
     [self.frontCardView mdc_swipe:MDCSwipeDirectionLeft];
 }
 
-// Programmatically "likes" the front card view.
 - (void)upvoteFrontCardView {
     [self.frontCardView mdc_swipe:MDCSwipeDirectionRight];
 }

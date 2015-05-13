@@ -8,8 +8,12 @@
 
 #import "RDHostDataManager.h"
 #import "AFNetworking.h"
-static NSString * const ENDPOINT =  @"http://localhost:8080/api/v1/links";
-//static NSString * const ENDPOINT =  @"http://rinderxxxx-dev.elasticbeanstalk.com/api/v1/links";
+
+#if TARGET_IPHONE_SIMULATOR
+static NSString * const ENDPOINT = @"http://localhost:8080/api/v1/links";
+#else
+static NSString * const ENDPOINT = @"http://rinderxxxx-dev.elasticbeanstalk.com/api/v1/links";
+#endif
 
 @interface RDHostDataManager()
 
@@ -26,6 +30,7 @@ static NSString * const ENDPOINT =  @"http://localhost:8080/api/v1/links";
 @synthesize idx=_idx;
 
 -(id)init {
+    NSLog(@"Endpoint: %@", ENDPOINT);
     if ( self = [super init] ) {
         self.idx = 0;
         self.data = nil;
