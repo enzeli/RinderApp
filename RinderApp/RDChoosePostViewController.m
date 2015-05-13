@@ -9,6 +9,7 @@
 #import "RDChoosePostViewController.h"
 #import "MBProgressHUD.h"
 #import "SVModalWebViewController.h"
+#import "RDImageScrollView.h"
 
 static const CGFloat ChoosePersonButtonHorizontalPadding = 80.f;
 static const CGFloat ChoosePersonButtonVerticalPadding = 20.f;
@@ -19,7 +20,8 @@ static const CGFloat ChoosePersonButtonVerticalPadding = 20.f;
 @property (strong, nonatomic) MBProgressHUD* hud;
 @property (strong, nonatomic) UITapGestureRecognizer * tapRecognizer;
 @property (strong, nonatomic) UILongPressGestureRecognizer * pressRecognizer;
-@property (strong, nonatomic) UIImageView * imageView;
+//@property (strong, nonatomic) UIImageView * imageView;
+@property (strong, nonatomic) RDImageScrollView *imageView;
 
 @end
 
@@ -192,10 +194,11 @@ static const CGFloat ChoosePersonButtonVerticalPadding = 20.f;
 
 - (void)imageTapped:(UITapGestureRecognizer *)recognizer
 {
-    self.imageView = [[UIImageView alloc] initWithFrame:self.view.frame];
-    self.imageView.backgroundColor = [UIColor blackColor];
-    [self.imageView setImage:self.frontCardView.imageView.image];
-    self.imageView.contentMode = UIViewContentModeScaleAspectFit;
+//    self.imageView = [[UIImageView alloc] initWithFrame:self.view.frame];
+//    self.imageView.backgroundColor = [UIColor blackColor];
+//    [self.imageView setImage:self.frontCardView.imageView.image];
+//    self.imageView.contentMode = UIViewContentModeScaleAspectFit;
+    self.imageView = [[RDImageScrollView alloc] initWithFrame:self.view.frame image:self.frontCardView.imageView.image];
     self.imageView.alpha = 0.0;
     [self.view addSubview:self.imageView];
     [UIView animateWithDuration:0.3

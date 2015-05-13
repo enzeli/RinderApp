@@ -18,6 +18,7 @@
 		C311CA7D1AE88C3200FF8EFE /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = C311CA7C1AE88C3200FF8EFE /* data.json */; };
 		C311CA801AE8902E00FF8EFE /* RDMockDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C311CA7F1AE8902E00FF8EFE /* RDMockDataManager.m */; };
 		C36BA1A41AFEA3AD00CFBFC6 /* RDHostDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C36BA1A31AFEA3AD00CFBFC6 /* RDHostDataManager.m */; };
+		C37799801B03D74300377CF8 /* RDImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C377997F1B03D74300377CF8 /* RDImageScrollView.m */; };
 		C3B3D7801AEE93DB0064E0C4 /* rinder.png in Resources */ = {isa = PBXBuildFile; fileRef = C3B3D77F1AEE93DB0064E0C4 /* rinder.png */; };
 		C3FC868A1AEABA0500DB2C6C /* RedditPost.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FC86891AEABA0500DB2C6C /* RedditPost.m */; };
 /* End PBXBuildFile section */
@@ -55,6 +56,8 @@
 		C311CA7F1AE8902E00FF8EFE /* RDMockDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDMockDataManager.m; sourceTree = "<group>"; };
 		C36BA1A21AFEA3AD00CFBFC6 /* RDHostDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDHostDataManager.h; sourceTree = "<group>"; };
 		C36BA1A31AFEA3AD00CFBFC6 /* RDHostDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDHostDataManager.m; sourceTree = "<group>"; };
+		C377997E1B03D74300377CF8 /* RDImageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDImageScrollView.h; sourceTree = "<group>"; };
+		C377997F1B03D74300377CF8 /* RDImageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDImageScrollView.m; sourceTree = "<group>"; };
 		C3B3D77F1AEE93DB0064E0C4 /* rinder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rinder.png; sourceTree = "<group>"; };
 		C3FC86881AEABA0500DB2C6C /* RedditPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedditPost.h; sourceTree = "<group>"; };
 		C3FC86891AEABA0500DB2C6C /* RedditPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedditPost.m; sourceTree = "<group>"; };
@@ -139,6 +142,8 @@
 				C3FC86891AEABA0500DB2C6C /* RedditPost.m */,
 				C30D679B1AE9990B00A6D74E /* RDChoosePostView.h */,
 				C30D679C1AE9990B00A6D74E /* RDChoosePostView.m */,
+				C377997E1B03D74300377CF8 /* RDImageScrollView.h */,
+				C377997F1B03D74300377CF8 /* RDImageScrollView.m */,
 				C30D679E1AE9992C00A6D74E /* RDChoosePostViewController.h */,
 				C30D679F1AE9992C00A6D74E /* RDChoosePostViewController.m */,
 				C30D679A1AE97A0400A6D74E /* DataManagers */,
@@ -314,6 +319,7 @@
 			files = (
 				C311CA801AE8902E00FF8EFE /* RDMockDataManager.m in Sources */,
 				C3FC868A1AEABA0500DB2C6C /* RedditPost.m in Sources */,
+				C37799801B03D74300377CF8 /* RDImageScrollView.m in Sources */,
 				C30D679D1AE9990B00A6D74E /* RDChoosePostView.m in Sources */,
 				C311CA7B1AE7FC1C00FF8EFE /* RDDataManager.m in Sources */,
 				C30D67A01AE9992C00A6D74E /* RDChoosePostViewController.m in Sources */,
@@ -430,6 +436,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = RinderApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -444,6 +451,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = RinderApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

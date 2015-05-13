@@ -12,7 +12,7 @@
 #if TARGET_IPHONE_SIMULATOR
 static NSString * const ENDPOINT = @"http://localhost:8080/api/v1/links";
 #else
-static NSString * const ENDPOINT = @"http://rinderxxxx-dev.elasticbeanstalk.com/api/v1/links";
+static NSString * const ENDPOINT = @"http://rinder.elasticbeanstalk.com/api/v1/links";
 #endif
 
 @interface RDHostDataManager()
@@ -20,7 +20,7 @@ static NSString * const ENDPOINT = @"http://rinderxxxx-dev.elasticbeanstalk.com/
 @property (assign, nonatomic) int idx;
 @property (strong, nonatomic) NSArray* data;
 @property (strong, nonatomic) NSArray* nextData;
-
+@property (assign) NSInteger page;
 
 @end
 
@@ -34,8 +34,11 @@ static NSString * const ENDPOINT = @"http://rinderxxxx-dev.elasticbeanstalk.com/
     if ( self = [super init] ) {
         self.idx = 0;
         self.data = nil;
-        [self loadLocalDataFromURL:ENDPOINT toNext:NO];
-        [self loadLocalDataFromURL:ENDPOINT toNext:YES];
+        self.page = 0;
+        [self loadLocalDataFromURL:[self urlForPage:self.page] toNext:NO];
+        self.page += 1;
+        [self loadLocalDataFromURL:[self urlForPage:self.page] toNext:YES];
+        self.page += 1;
         
     }
     return self;
@@ -60,6 +63,7 @@ static NSString * const ENDPOINT = @"http://rinderxxxx-dev.elasticbeanstalk.com/
 -(void)loadLocalDataFromURL:(NSString *)urlString toNext:(BOOL)toNext
 {
     
+    NSLog(@"%@",urlString);
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
@@ -122,7 +126,8 @@ static NSString * const ENDPOINT = @"http://rinderxxxx-dev.elasticbeanstalk.com/
         // switch data to nextdata
         _idx = 0;
         self.data = self.nextData;
-        [self loadLocalDataFromURL:ENDPOINT toNext:YES];
+        [self loadLocalDataFromURL:[self urlForPage:self.page] toNext:YES];
+        self.page += 1;
         
         if (self.nextPost){
             self.currentPost = self.nextPost;
@@ -162,5 +167,9 @@ static NSString * const ENDPOINT = @"http://rinderxxxx-dev.elasticbeanstalk.com/
     
 }
 
+- (NSString *)urlForPage:(NSInteger)i
+{
+    return [NSString stringWithFormat:[ENDPOINT stringByAppendingString:@"?page=%d"], i];
+}
 
 @end

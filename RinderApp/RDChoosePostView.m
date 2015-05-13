@@ -71,21 +71,9 @@
     [self addSubview:_informationView];
 
     [self constructTitleLabel];
-//    [self constructTitleView];
+
 }
 
-//- (void)constructTitleView {
-//    CGFloat leftPadding = 12.f;
-//    CGFloat topPadding = 12.f;
-//    CGRect frame = CGRectMake(leftPadding,
-//                              topPadding,
-//                              CGRectGetWidth(_informationView.frame),
-//                              CGRectGetHeight(_informationView.frame) - topPadding);
-//    _titleView = [[UITextView alloc] initWithFrame:frame];
-//    _titleView.textColor = [UIColor whiteColor];
-//    _titleView.text = [NSString stringWithFormat:@"%@", _post.title];
-//    [_informationView addSubview:_titleLabel];
-//}
 
 - (void)constructTitleLabel {
     CGFloat leftPadding = 8.f;
