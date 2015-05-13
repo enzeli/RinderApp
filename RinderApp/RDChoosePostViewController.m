@@ -42,6 +42,7 @@ static const CGFloat ChoosePersonButtonVerticalPadding = 20.f;
     
     [self constructDownvoteButton];
     [self constructUpvoteButton];
+    [self constructTopLogo];
     
     self.hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     self.hud.mode = MBProgressHUDModeIndeterminate;
@@ -71,6 +72,8 @@ static const CGFloat ChoosePersonButtonVerticalPadding = 20.f;
     MDCSwipeToChooseViewOptions *options = [MDCSwipeToChooseViewOptions new];
     options.delegate = self;
     options.threshold = 160.f;
+    options.likedText = @"upvote";
+    options.nopeText = @"dnvote";
     options.onPan = ^(MDCPanState *state){
         CGRect frame = [self backCardViewFrame];
         self.backCardView.frame = CGRectMake(frame.origin.x,
@@ -152,7 +155,6 @@ static const CGFloat ChoosePersonButtonVerticalPadding = 20.f;
                       CGRectGetHeight(frontFrame));
 }
 
-// Create and add the "nope" button.
 - (void)constructDownvoteButton {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     UIImage *image = [UIImage imageNamed:@"downvote"];
@@ -171,7 +173,21 @@ static const CGFloat ChoosePersonButtonVerticalPadding = 20.f;
     [self.view addSubview:button];
 }
 
-// Create and add the "like" button.
+- (void)constructTopLogo
+{
+
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo2.png"]];
+    CGFloat width = 200.f;
+    CGFloat height = 25.f;
+    imageView.frame = CGRectMake(self.view.center.x - width/2,
+                                 23.,
+                                 width,
+                                 height);
+    imageView.contentMode = UIViewContentModeScaleAspectFit;
+    [self.view addSubview:imageView];
+
+}
+
 - (void)constructUpvoteButton {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     UIImage *image = [UIImage imageNamed:@"upvote"];
@@ -259,6 +275,13 @@ static const CGFloat ChoosePersonButtonVerticalPadding = 20.f;
 {
     [self reloadCardViews];
     [self.hud hide:YES];
+}
+
+
+#pragma mark - prefersStatusBarHidden
+
+-(BOOL)prefersStatusBarHidden{
+    return YES;
 }
 
 @end

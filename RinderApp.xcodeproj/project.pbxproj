@@ -19,6 +19,8 @@
 		C311CA801AE8902E00FF8EFE /* RDMockDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C311CA7F1AE8902E00FF8EFE /* RDMockDataManager.m */; };
 		C36BA1A41AFEA3AD00CFBFC6 /* RDHostDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C36BA1A31AFEA3AD00CFBFC6 /* RDHostDataManager.m */; };
 		C37799801B03D74300377CF8 /* RDImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C377997F1B03D74300377CF8 /* RDImageScrollView.m */; };
+		C37799871B03E7A000377CF8 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C37799861B03E7A000377CF8 /* logo.png */; };
+		C37799891B03E8AC00377CF8 /* logo2.png in Resources */ = {isa = PBXBuildFile; fileRef = C37799881B03E8AC00377CF8 /* logo2.png */; };
 		C3B3D7801AEE93DB0064E0C4 /* rinder.png in Resources */ = {isa = PBXBuildFile; fileRef = C3B3D77F1AEE93DB0064E0C4 /* rinder.png */; };
 		C3FC868A1AEABA0500DB2C6C /* RedditPost.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FC86891AEABA0500DB2C6C /* RedditPost.m */; };
 /* End PBXBuildFile section */
@@ -58,6 +60,8 @@
 		C36BA1A31AFEA3AD00CFBFC6 /* RDHostDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDHostDataManager.m; sourceTree = "<group>"; };
 		C377997E1B03D74300377CF8 /* RDImageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDImageScrollView.h; sourceTree = "<group>"; };
 		C377997F1B03D74300377CF8 /* RDImageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDImageScrollView.m; sourceTree = "<group>"; };
+		C37799861B03E7A000377CF8 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		C37799881B03E8AC00377CF8 /* logo2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo2.png; sourceTree = "<group>"; };
 		C3B3D77F1AEE93DB0064E0C4 /* rinder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rinder.png; sourceTree = "<group>"; };
 		C3FC86881AEABA0500DB2C6C /* RedditPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedditPost.h; sourceTree = "<group>"; };
 		C3FC86891AEABA0500DB2C6C /* RedditPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedditPost.m; sourceTree = "<group>"; };
@@ -150,6 +154,8 @@
 				C311CA601AE7F92B00FF8EFE /* Images.xcassets */,
 				C311CA7C1AE88C3200FF8EFE /* data.json */,
 				C3B3D77F1AEE93DB0064E0C4 /* rinder.png */,
+				C37799881B03E8AC00377CF8 /* logo2.png */,
+				C37799861B03E7A000377CF8 /* logo.png */,
 				C311CA531AE7F92B00FF8EFE /* Supporting Files */,
 			);
 			path = RinderApp;
@@ -267,6 +273,8 @@
 				C311CA611AE7F92B00FF8EFE /* Images.xcassets in Resources */,
 				C3B3D7801AEE93DB0064E0C4 /* rinder.png in Resources */,
 				C311CA7D1AE88C3200FF8EFE /* data.json in Resources */,
+				C37799871B03E7A000377CF8 /* logo.png in Resources */,
+				C37799891B03E8AC00377CF8 /* logo2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
